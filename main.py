@@ -168,7 +168,6 @@ def replace_identifiers(code, identifier_map):
     return pattern.sub(lambda match: identifier_map.get(match.group(0), match.group(0)), code)
 
 def add_missing_header(code, lang):
-    """Add appropriate headers for Java and C++ if they're missing"""
     if lang == "C++":
         if "#include" not in code:
             return "#include <iostream>\n\n" + code
@@ -226,15 +225,4 @@ To use this tool, follow these steps:
 4. **View Token Summary** : The tool will display classified tokens, including keywords, identifiers, operators, and more.  
 5. **Check the Symbol Table** : The tool identifies variables and their data types.  
 6. **Modified Code Output** : View the updated code with replaced identifiers for further analysis.  
-""")
-
-st.sidebar.write("---")
-st.sidebar.write("""
-### **About the Developers**\n
-Year : TE\n
-Branch : Computer Engineering\n
-Div : C\n
-07  Rudrapratap Singh\n
-09  Shashank Singh\n
-10  Shivanshu Singh
 """)
